@@ -1,12 +1,16 @@
 package com.example.swlibrary.Categories
 
-class Starship {
-    private var name : String = ""
-    private var model : String = ""
-    private var length : String = ""
-    private var crew : String = ""
-    private var hyperdrive_rating : String = ""
-    private var starship_class : String = ""
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class Starship(private var name : String,
+               private var model : String,
+               private var length : String,
+               private var crew : String,
+               private var hyperdrive_rating : String,
+               private var starship_class : String) : Parcelable {
+
 
     fun getShipName() : String {
         return this.name

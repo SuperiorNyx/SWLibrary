@@ -1,5 +1,6 @@
 package com.example.swlibraryexample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,19 +13,23 @@ import com.example.swlibrary.Categories.Person
 import com.example.swlibrary.VCallback
 
 class PeopleActivity : AppCompatActivity(), RVAdapter.ItemClickListener {
-    lateinit var rvAdapter : RVAdapter
+    private lateinit var rvAdapter : RVAdapter
+    private var resultsList = arrayListOf<Person>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_people)
         APICall.loadInfo(this, "people/", object : VCallback {
             override fun onSuccess(result: ArrayList<Any>?) {
-                makeRecyclerList(result as? ArrayList<Person>)
+                resultsList = result as ArrayList<Person>
+                makeRecyclerList(resultsList)
             }
         })
     }
 
     override fun onItemClick(view: View?, position: Int) {
-        Toast.makeText(this, "Yay we did it!", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, InfoDialog::class.java)
+        intent.putExtra("Data", resultsList[position])
+        startActivity(intent)
     }
 
     fun makeRecyclerList(people: ArrayList<Person>?){

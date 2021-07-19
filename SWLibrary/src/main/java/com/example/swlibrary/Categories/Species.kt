@@ -1,12 +1,16 @@
 package com.example.swlibrary.Categories
 
-class Species {
-    private var name : String = ""
-    private var designation : String = ""
-    private var skin_colors : String = ""
-    private var hair_colors: String = ""
-    private var eye_colors : String = ""
-    private var language : String = ""
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class Species(private var name : String,
+              private var designation : String,
+              private var skin_colors : String,
+              private var hair_colors: String,
+              private var eye_colors : String,
+              private var language : String) : Parcelable {
+
 
     fun getSpeciesName() : String {
         return this.name
@@ -18,6 +22,10 @@ class Species {
 
     fun getSkinColors() : String {
         return this.skin_colors
+    }
+
+    fun getHairColors() : String {
+        return this.hair_colors
     }
 
     fun getEyeColors() : String {

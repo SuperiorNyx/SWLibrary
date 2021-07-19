@@ -1,9 +1,13 @@
 package com.example.swlibrary.Categories
 
-class Film {
-    private var title: String = ""
-    private var opening_crawl: String = ""
-    private var release_date: String = ""
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class Film(private var title : String,
+                private var opening_crawl : String,
+                private var release_date : String
+                ) : Parcelable {
 
     fun getFilmTitle() : String {
         return this.title

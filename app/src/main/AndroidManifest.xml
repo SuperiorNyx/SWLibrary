@@ -11,13 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SWLibraryExample">
-        <activity android:name=".PlanetActivity"
+        <activity  android:theme="@android:style/Theme.Holo.Dialog"
+            android:name=".InfoDialog">
+
+        </activity>
+        <activity
+            android:name=".PlanetActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".PeopleActivity"
+        <activity
+            android:name=".PeopleActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

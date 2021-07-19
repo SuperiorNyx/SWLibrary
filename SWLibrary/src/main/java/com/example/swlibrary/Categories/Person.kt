@@ -1,24 +1,29 @@
 package com.example.swlibrary.Categories
 
-class Person {
-    private var name: String = ""
-    private var eyeColor: String = ""
-    private var birthYear: String = ""
-    private var url: String = ""
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
+data class Person (
+    private var name: String,
+    private var eye_color: String,
+    private var birth_year: String,
+    private var url: String
+    ) : Parcelable {
     fun getPersonName() : String {
         return this.name
     }
 
     fun getEyeColor() : String {
-        return this.eyeColor
+        return this.eye_color
     }
 
     fun getBirthYear() : String {
-        return this.birthYear
+        return this.birth_year
     }
 
     fun getUrl() : String {
         return this.url
     }
 }
+

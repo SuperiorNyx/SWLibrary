@@ -1,10 +1,16 @@
 package com.example.swlibrary.Categories
 
-class Planet {
-    private var name: String = ""
-    private var population: String = ""
-    private var climate: String = ""
-    private var url: String = ""
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class Planet(
+    private var name: String,
+    private var population: String,
+    private var climate: String,
+    private var url: String
+    ) : Parcelable{
+
 
     fun getPlanetName() : String {
         return this.name
