@@ -1,0 +1,3 @@
+include ':SWLibrary'
+include ':app'
+rootProject.name = "SWLibraryExample"
