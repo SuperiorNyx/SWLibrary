@@ -21,7 +21,7 @@ data class Planet(
     }
 
     fun getClimate() : String {
-        return this.getClimate()
+        return this.climate
     }
 
     fun getUrl() : String {
