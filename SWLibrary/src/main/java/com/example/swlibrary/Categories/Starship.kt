@@ -35,4 +35,10 @@ data class Starship(private var name : String,
     fun getClass() : String {
         return this.starship_class
     }
+
+    override fun toString() : String {
+        return "Name: ${this.getShipName()} \n" +
+                "Model: ${this.getModel()} \n" +
+                "Class: ${this.getClass()}"
+    }
 }

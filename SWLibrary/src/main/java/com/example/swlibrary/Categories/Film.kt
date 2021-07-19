@@ -20,4 +20,10 @@ data class Film(private var title : String,
     fun getReleaseDate() : String {
         return this.release_date
     }
+
+    override fun toString() : String {
+        return "Title: ${this.getFilmTitle()} \n" +
+                "Release date: ${this.getReleaseDate()} \n" +
+                this.getOpening()
+    }
 }

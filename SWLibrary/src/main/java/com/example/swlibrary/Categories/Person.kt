@@ -25,5 +25,11 @@ data class Person (
     fun getUrl() : String {
         return this.url
     }
+
+    override fun toString() : String {
+        return "Name: ${this.getPersonName()} \n" +
+                "Eye color: ${this.getEyeColor()} \n" +
+                "Birth year: ${this.getBirthYear()}"
+    }
 }
 

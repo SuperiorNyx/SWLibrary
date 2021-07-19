@@ -29,11 +29,19 @@ data class Species(private var name : String,
     }
 
     fun getEyeColors() : String {
-
         return this.eye_colors
     }
 
     fun getLanguage() : String {
         return this.language
+    }
+
+    override fun toString() : String {
+        return "Name: ${this.getSpeciesName()} \n" +
+                "Designation: ${this.getDesignation()} \n" +
+                "Skin colors: ${this.getSkinColors()} \n" +
+                "Hair colors: ${this.getHairColors()} \n" +
+                "Eye colors: ${this.getEyeColors()} \n" +
+                "Language: ${this.getLanguage()} "
     }
 }

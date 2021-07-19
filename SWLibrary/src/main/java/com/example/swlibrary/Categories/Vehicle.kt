@@ -25,4 +25,9 @@ data class Vehicle(
     fun getCrew() : String {
         return this.crew
     }
+
+    override fun toString(): String {
+        return "Name: ${this.getVehicleName()}\n" +
+                "Model: ${this.getModel()} \n"
+    }
 }

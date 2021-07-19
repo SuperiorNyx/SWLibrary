@@ -27,4 +27,11 @@ data class Planet(
     fun getUrl() : String {
         return this.url
     }
+
+    override fun toString() : String {
+        return "Name: ${this.getPlanetName()} \n" +
+                "Population: ${this.getPopulation()} \n" +
+                "Climate: ${this.getClimate()}"
+
+    }
 }
