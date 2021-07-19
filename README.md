@@ -7,8 +7,9 @@ A library to access the https://swapi.dev/ API
 The main purpose of this library is to handle an API call to https://swapi.dev/api/ and to allow a user to use the data from the response. In making the different categories, 
 I felt it was more practical to make a call to retrieve the whole list of objects in a category rather than trying to make a separate call for each item in a list (or a call to get the number of items and then a call to get an item's attributes). I then tried to make the API call as ubiquitous as possible to avoid having to repeat code for separate calls, so the current version makes a call to different endpoints based on a parameter String which is passed in. The data from the endpoint is then parsed into one of several category classes I created to hold the attributes from the end point (such as name and eye color for a Person). Accessing the data is then handled by a Callback interface, which the user implements in their activity.
 
-###
-Sample app here:
+### Sample App
+Sample app here: https://github.com/SuperiorNyx/SWLibApp
+
 This sample app uses simple buttons to navigate between pages. The category pages themselves use RecyclerView to dynamically display the list of objects that is received from the API call. Clicking on an item opens the InfoDialog Activity as a dialog which displays the item's information
 
 ### Objects
