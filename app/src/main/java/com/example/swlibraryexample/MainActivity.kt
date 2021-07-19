@@ -15,4 +15,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, PeopleActivity::class.java)
         startActivity(intent)
     }
+
+    fun loadPlanets(view: View) {
+        val intent = Intent(this, PlanetActivity::class.java)
+        startActivity(intent)
+    }
 }

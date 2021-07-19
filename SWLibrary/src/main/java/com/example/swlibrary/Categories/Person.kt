@@ -1,4 +1,4 @@
-package com.example.swlibrary
+package com.example.swlibrary.Categories
 
 class Person {
     private var name: String = ""

@@ -5,6 +5,8 @@ import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.swlibrary.Categories.Person
+import com.example.swlibrary.Categories.Planet
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
@@ -26,6 +28,11 @@ object APICall {
                             response.getJSONArray("results").toString(), type
                         ) as? ArrayList<Any>
                         Log.d("RESULTS", "got to people!")
+                    }
+                    "planets/" -> {
+                        type = object : TypeToken<List<Planet>>(){}.type
+                        responseList = gson.fromJson<ArrayList<Planet>>(
+                            response.getJSONArray("results").toString(), type) as? ArrayList<Any>
                     }
                     else -> { Toast.makeText(c,"Unknown Category!", Toast.LENGTH_LONG).show() }
                 }
