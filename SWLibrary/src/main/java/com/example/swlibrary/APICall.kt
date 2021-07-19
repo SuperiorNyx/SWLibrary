@@ -15,30 +15,32 @@ object APICall {
     fun loadInfo(c: Context?, category: String, vCallback: VCallback) {
         val queue = Volley.newRequestQueue(c)
         val url = "https://swapi.dev/api/$category"
+        val cat = category.replace("/", "")
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             { response ->
                 val type : Type
                 var responseList : ArrayList<Any>? = arrayListOf()
-                when (category) {
-                    "people/" -> {
+                Log.d("TEST", cat)
+                when (cat) {
+                    "people" -> {
                         type = object : TypeToken<List<Person>>() {}.type
                         responseList = gson.fromJson<ArrayList<Person>>(
                             response.getJSONArray("results").toString(), type
                         ) as? ArrayList<Any>
                         Log.d("RESULTS", "got to people!")
                     }
-                    "planets/" -> {
+                    "planets" -> {
                         type = object : TypeToken<List<Planet>>(){}.type
                         responseList = gson.fromJson<ArrayList<Planet>>(
                             response.getJSONArray("results").toString(), type) as? ArrayList<Any>
                     }
-                    "films/" -> {
+                    "films" -> {
                         type = object : TypeToken<List<Film>>(){}.type
                         responseList = gson.fromJson<ArrayList<Film>>(
                             response.getJSONArray("results").toString(), type) as? ArrayList<Any>
                     }
-                    "species/" -> {
+                    "species" -> {
                         type = object : TypeToken<List<Species>>(){}.type
                         responseList = gson.fromJson<ArrayList<Species>>(
                             response.getJSONArray("results").toString(), type) as? ArrayList<Any>
